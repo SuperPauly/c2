@@ -1,11 +1,71 @@
-First things first: this repository lacks a license because the code is of dubious ethical standing. It was reverse-engineered from a [Wayback Machine archive from 2019](https://web.archive.org/web/20191003004300/http://app.oneviewcalendar.com/). 
+First things first: this repository lacks a license because the code is of dubious ethical standing. It began as a reverse-engineered implementation from a [Wayback Machine archive from 2019](https://web.archive.org/web/20191003004300/http://app.oneviewcalendar.com/).
 
 [OneView](https://news.ycombinator.com/item?id=11846108) was posted to hacker news in 2017, and is number 5 on the list of [top scoring Show HN stories that didn't survive](https://nami.land/2023/06/11/track-hn-analyze-survival-rate-of-120-396-show-hn-posts-june-2023.html#top-scoring-show-hn-stories-that-didnt-survive).
 
 I have tried to get in touch with Peter Molyneaux, the creator of OneView, to no avail. If/when he sees this I will do whatever he wants with this repo and the demo site. If he wants it all taken down, fine by me, if he wants it to have a specific license, I'll give it that license, etc. If I don't hear anything from him within a month or two I will assign a permissive license.
 
-This reverse-engineered implementation is made to work as a [markwhen view](https://docs.markwhen.com/visualizations.html), which means that you can add it on [app.markwhen.com](https://app.markwhen.com) via the settings:
+This version is a small Imba canvas recreation of the visible timeline baseline. It keeps the Markwhen custom-view host integration, but intentionally leaves out the old settings, shop, edit flows, calendar account management, and large OneView application shell.
 
-![](ov.png)
+## Development
 
-If you're running it locally, use `http://localhost:5150`.
+```sh
+npm install
+npm run dev
+npm test
+npm run build
+```
+
+The app runs at `http://127.0.0.1:6180`. Use `?now=YYYY-MM-DD` to freeze the rendered date for screenshot tests.
+
+Useful checks:
+
+```sh
+npm run build
+npm test
+npm run lines
+```
+
+`npm test` runs the Playwright fallback visual baseline tests and the Markwhen host integration tests.
+
+## Code Architecture
+
+The app is deliberately small. There is no Vite or TypeScript build surface; Imba builds the canvas app directly from `src/main.imba`.
+
+- `src/main.imba` is the browser entry point. It creates the canvas, owns runtime state, handles resize, wheel scrolling, touch scrolling, hover, click, and tap events, and chooses between host events and demo fallback events.
+- `src/markwhen.js` is the Markwhen bridge. It imports `useLpc` from `@markwhen/view-client` and `parse`, `iter`, and `isEvent` from `@markwhen/parser`. On startup it requests `appState` and `markwhenState`, transforms real Markwhen events into the small canvas event model, and exposes the `window.__oneviewMock` test hook.
+- `src/timeline/data.imba` contains the standalone demo timeline used when no host state exists.
+- `src/timeline/layout.imba` contains date and row-position helpers.
+- `src/timeline/theme.imba` contains the light and dark canvas palettes.
+- `src/timeline/draw.imba` contains all timeline drawing code. It renders dates, grid rows, normal events, multi-day floating blocks, hover/detail outlines, and returns hit regions for pointer interaction.
+- `tests/visible.spec.js` covers the fallback visual baseline at desktop, laptop, and mobile sizes.
+- `tests/host.spec.js` injects `window.__oneviewMock` before page load and verifies host event rendering, color-map usage, dark mode, hover messages, detail messages, and fallback behavior.
+
+Host messages kept by the bridge:
+
+- Requests sent on startup: `appState`, `markwhenState`.
+- Requests sent from pointer interaction: `setHoveringPath`, `setDetailPath`.
+
+The host event model is intentionally narrow:
+
+- `title` comes from `firstLine.restTrimmed`.
+- `start` and `end` come from `dateRangeIso.fromDateTimeIso` and `dateRangeIso.toDateTimeIso`.
+- `path` is the parser path array from `iter`.
+- `color` is looked up as `appState.colorMap[source][firstTag]`, where `source` defaults to `default`.
+- `hovered` and `detail` are derived from `appState.hoveringPath` and `appState.detailPath`.
+
+## Modifying The Code
+
+Keep changes in the smallest file that owns the behavior:
+
+- Change host parsing, color-map lookup, or mock behavior in `src/markwhen.js`.
+- Change event hit-testing or browser input behavior in `src/main.imba`.
+- Change timeline positioning in `src/timeline/layout.imba`.
+- Change colors, dark mode, or palette constants in `src/timeline/theme.imba`.
+- Change canvas visuals in `src/timeline/draw.imba`.
+- Change fallback screenshot data in `src/timeline/data.imba`.
+
+When adding a new host-facing behavior, add or update a `window.__oneviewMock` Playwright test in `tests/host.spec.js`. The mock records outbound requests in `window.__oneviewMock.requests`, so tests can assert exact Markwhen messages without a real host.
+
+When changing visible fallback rendering, update or re-run the baseline screenshot tests intentionally. Avoid changing fallback visuals as a side effect of host-integration work.
+
+Do not reintroduce the removed large app shell unless the goal explicitly changes. In particular, avoid adding Vite, TypeScript, moment, settings UI, shop UI, add/edit flows, localStorage preference systems, or calendar account management for ordinary timeline or host-message changes.
