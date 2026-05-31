@@ -13,7 +13,8 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.60.0",
-    "imba": "^2.0.0-alpha.251"
+    "imba": "^2.0.0-alpha.251",
+    "picomatch": "4.0.4"
   },
   "files": [
     "dist"
