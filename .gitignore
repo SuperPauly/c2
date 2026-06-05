@@ -6,3 +6,7 @@ playwright-report/
 .ckb/
 .serena/
 oneview-*-*.png
+.comparison/
+/tmp/original-c2/
+blob-report/
+playwright-traces/
