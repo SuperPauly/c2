@@ -22,7 +22,7 @@ test.describe('Behaviour parity – candidate interactions', () => {
 		expect(errors).toEqual([])
 	})
 
-	test('no unexpected console errors on load', async ({page, isMobile}) => {
+	test('no unexpected console errors on load', async ({page}) => {
 		const errors = []
 		page.on('console', msg => {
 			if (msg.type() === 'error' && !msg.text().includes('favicon') && !msg.text().includes('willReadFrequently')) {
@@ -74,7 +74,7 @@ test.describe('Behaviour parity – candidate interactions', () => {
 		expect(Buffer.compare(before, after)).not.toBe(0)
 	})
 
-	test('event hover dispatches setHoveringPath via host bridge', async ({page, isMobile}) => {
+	test('event hover dispatches setHoveringPath via host bridge', async ({page}) => {
 		// Use date close to event: first = now - 3 days, event needs to be within visible range
 		await installHostMock(page, {appState: sourceColourMapAppState, text: '2026-01-13: Hover target #work'})
 		await page.goto(`/?now=${REFERENCE_DATE}`)
@@ -94,7 +94,7 @@ test.describe('Behaviour parity – candidate interactions', () => {
 		expect(found).toBe(true)
 	})
 
-	test('event click dispatches setDetailPath via host bridge', async ({page, isMobile}) => {
+	test('event click dispatches setDetailPath via host bridge', async ({page}) => {
 		await installHostMock(page, {appState: sourceColourMapAppState, text: '2026-01-13: Click target #work'})
 		await page.goto(`/?now=${REFERENCE_DATE}`)
 		await waitForCanvasReady(page)
@@ -127,7 +127,7 @@ test.describe('Behaviour parity – candidate interactions', () => {
 		expect(bg[0] + bg[1] + bg[2]).toBeLessThan(100)
 	})
 
-	test('colour map update applies colours to events', async ({page, isMobile}) => {
+	test('colour map update applies colours to events', async ({page}) => {
 		await installHostMock(page, {
 			appState: sourceColourMapAppState,
 			text: '2026-01-14: Work task #work',
@@ -150,7 +150,7 @@ test.describe('Behaviour parity – candidate interactions', () => {
 		expect(found).toBe(true)
 	})
 
-	test('large event set remains responsive after scroll', async ({page, isMobile}) => {
+	test('large event set remains responsive after scroll', async ({page}) => {
 		await installHostMock(page, {appState: defaultAppState, text: manyEvents.text})
 		await page.goto(`/?now=${REFERENCE_DATE}`)
 		await waitForCanvasReady(page)
@@ -181,7 +181,7 @@ test.describe('Behaviour parity – candidate interactions', () => {
 		expect(errors).toEqual([])
 	})
 
-	test('repeated state updates do not duplicate events visually', async ({page, isMobile}) => {
+	test('repeated state updates do not duplicate events visually', async ({page}) => {
 		await installHostMock(page, {appState: sourceColourMapAppState, text: singleEvent.text})
 		await page.goto(`/?now=${REFERENCE_DATE}`)
 		await waitForCanvasReady(page)
@@ -200,7 +200,7 @@ test.describe('Behaviour parity – candidate interactions', () => {
 		expect(Buffer.compare(first, second)).toBe(0)
 	})
 
-	test('resize triggers a redraw at new dimensions', async ({page, isMobile}) => {
+	test('resize triggers a redraw at new dimensions', async ({page}) => {
 		await installHostMock(page, {appState: defaultAppState, text: singleEvent.text})
 		await page.goto(`/?now=${REFERENCE_DATE}`)
 		await waitForCanvasReady(page)
