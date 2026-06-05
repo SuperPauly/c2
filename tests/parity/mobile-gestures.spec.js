@@ -9,12 +9,12 @@ const REFERENCE_DATE = '2026-01-15'
 
 test.describe('Mobile gesture parity', () => {
 	// Only run on mobile projects with touch support
-	test.beforeEach(async ({page}) => {
+	test.beforeEach(async ({page, isMobile}) => {
 		await page.clock.setFixedTime(new Date('2026-01-15T12:00:00.000Z'))
 	})
 
-	test('touch drag vertically scrolls the timeline', async ({page, context}) => {
-		test.skip(!context._options?.hasTouch, 'Touch not available on this project')
+	test('touch drag vertically scrolls the timeline', async ({page, isMobile}) => {
+		test.skip(!isMobile, 'Touch not available on this project')
 
 		await installHostMock(page, {appState: defaultAppState, text: manyEvents.text})
 		await page.goto(`/?now=${REFERENCE_DATE}`)
@@ -28,8 +28,8 @@ test.describe('Mobile gesture parity', () => {
 		expect(Buffer.compare(before, after)).not.toBe(0)
 	})
 
-	test('touch drag horizontally does not scroll if original does not support it', async ({page, context}) => {
-		test.skip(!context._options?.hasTouch, 'Touch not available on this project')
+	test('touch drag horizontally does not scroll if original does not support it', async ({page, isMobile}) => {
+		test.skip(!isMobile, 'Touch not available on this project')
 
 		await installHostMock(page, {appState: defaultAppState, text: manyEvents.text})
 		await page.goto(`/?now=${REFERENCE_DATE}`)
@@ -45,8 +45,8 @@ test.describe('Mobile gesture parity', () => {
 		expect(after.length).toBeGreaterThan(0)
 	})
 
-	test('pinch out zooms the candidate timeline consistently with the original', async ({page, context}) => {
-		test.skip(!context._options?.hasTouch, 'Touch not available on this project')
+	test('pinch out zooms the candidate timeline consistently with the original', async ({page, isMobile}) => {
+		test.skip(!isMobile, 'Touch not available on this project')
 
 		await installHostMock(page, {appState: defaultAppState, text: manyEvents.text})
 		await page.goto(`/?now=${REFERENCE_DATE}`)
@@ -71,8 +71,8 @@ test.describe('Mobile gesture parity', () => {
 		expect(after.length).toBeGreaterThan(0)
 	})
 
-	test('pinch in zooms the candidate timeline consistently with the original', async ({page, context}) => {
-		test.skip(!context._options?.hasTouch, 'Touch not available on this project')
+	test('pinch in zooms the candidate timeline consistently with the original', async ({page, isMobile}) => {
+		test.skip(!isMobile, 'Touch not available on this project')
 
 		await installHostMock(page, {appState: defaultAppState, text: manyEvents.text})
 		await page.goto(`/?now=${REFERENCE_DATE}`)
@@ -94,8 +94,8 @@ test.describe('Mobile gesture parity', () => {
 		expect(after.length).toBeGreaterThan(0)
 	})
 
-	test('pinch followed by drag maintains consistent state', async ({page, context}) => {
-		test.skip(!context._options?.hasTouch, 'Touch not available on this project')
+	test('pinch followed by drag maintains consistent state', async ({page, isMobile}) => {
+		test.skip(!isMobile, 'Touch not available on this project')
 
 		await installHostMock(page, {appState: defaultAppState, text: manyEvents.text})
 		await page.goto(`/?now=${REFERENCE_DATE}`)
@@ -118,8 +118,8 @@ test.describe('Mobile gesture parity', () => {
 		expect(errors).toEqual([])
 	})
 
-	test('drag followed by pinch maintains consistent state', async ({page, context}) => {
-		test.skip(!context._options?.hasTouch, 'Touch not available on this project')
+	test('drag followed by pinch maintains consistent state', async ({page, isMobile}) => {
+		test.skip(!isMobile, 'Touch not available on this project')
 
 		await installHostMock(page, {appState: defaultAppState, text: manyEvents.text})
 		await page.goto(`/?now=${REFERENCE_DATE}`)
@@ -142,8 +142,8 @@ test.describe('Mobile gesture parity', () => {
 		expect(errors).toEqual([])
 	})
 
-	test('repeated pinch gestures do not corrupt state', async ({page, context}) => {
-		test.skip(!context._options?.hasTouch, 'Touch not available on this project')
+	test('repeated pinch gestures do not corrupt state', async ({page, isMobile}) => {
+		test.skip(!isMobile, 'Touch not available on this project')
 
 		await installHostMock(page, {appState: defaultAppState, text: manyEvents.text})
 		await page.goto(`/?now=${REFERENCE_DATE}`)
@@ -166,8 +166,8 @@ test.describe('Mobile gesture parity', () => {
 		expect(errors).toEqual([])
 	})
 
-	test('canvas owns touch gestures without accidental page scroll', async ({page, context}) => {
-		test.skip(!context._options?.hasTouch, 'Touch not available on this project')
+	test('canvas owns touch gestures without accidental page scroll', async ({page, isMobile}) => {
+		test.skip(!isMobile, 'Touch not available on this project')
 
 		await installHostMock(page, {appState: defaultAppState, text: manyEvents.text})
 		await page.goto(`/?now=${REFERENCE_DATE}`)
@@ -183,8 +183,8 @@ test.describe('Mobile gesture parity', () => {
 		expect(scrollAfter).toBe(scrollBefore)
 	})
 
-	test('viewport resize triggers appropriate redraw', async ({page, context}) => {
-		test.skip(!context._options?.hasTouch, 'Touch not available on this project')
+	test('viewport resize triggers appropriate redraw', async ({page, isMobile}) => {
+		test.skip(!isMobile, 'Touch not available on this project')
 
 		await installHostMock(page, {appState: defaultAppState, text: singleEvent.text})
 		await page.goto(`/?now=${REFERENCE_DATE}`)

@@ -63,3 +63,21 @@ When adding a new host-facing behavior, add or update a `window.__oneviewMock` P
 When changing visible fallback rendering, update or re-run the baseline screenshot tests intentionally. Avoid changing fallback visuals as a side effect of host-integration work.
 
 Do not reintroduce the removed large app shell unless the goal explicitly changes. In particular, avoid adding Vite, TypeScript, moment, settings UI, shop UI, add/edit flows, localStorage preference systems, or calendar account management for ordinary timeline or host-message changes.
+
+## Testing
+
+- **Playwright Tests**: Run `npm test`
+- **Appium Tests**: Run `npm run test:appium`
+
+### Appium Prerequisites
+- Node.js
+- Appium 2 (`npm install -g appium`)
+- UiAutomator2 driver (`appium driver install uiautomator2`)
+- Android SDK & a running Android emulator
+
+If the emulator cannot reach the dev server, you may need to port forward:
+```bash
+adb reverse tcp:6180 tcp:6180
+```
+
+To create an AVD if none exists: Use Android Studio's Device Manager or the `avdmanager` command-line tool.
