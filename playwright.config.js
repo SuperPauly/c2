@@ -80,7 +80,7 @@ export default defineConfig({
 		{
 			command: 'npm run dev',
 			url: CANDIDATE_URL,
-			reuseExistingServer: true,
+			reuseExistingServer: !process.env.CI,
 			timeout: 120000,
 		},
 	],
