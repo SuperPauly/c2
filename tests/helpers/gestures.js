@@ -13,8 +13,6 @@
  * @param {number} opts.duration - Duration in ms (default 300)
  */
 export async function touchDrag(page, start, end, {steps = 10, duration = 300} = {}) {
-	await page.touchscreen.tap(start.x, start.y)
-	await page.waitForTimeout(50)
 
 	// Use CDP for more reliable touch simulation
 	const client = await page.context().newCDPSession(page)

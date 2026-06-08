@@ -7,11 +7,11 @@ import {defaultAppState, darkModeAppState, sourceColourMapAppState} from '../fix
 const REFERENCE_DATE = '2026-01-15'
 
 test.describe('Behaviour parity – candidate interactions', () => {
-	test.beforeEach(async ({page}) => {
+	test.beforeEach(async ({page, isMobile}) => {
 		await page.clock.setFixedTime(new Date('2026-01-15T12:00:00.000Z'))
 	})
 
-	test('initial load completes without uncaught page errors', async ({page}) => {
+	test('initial load completes without uncaught page errors', async ({page, isMobile}) => {
 		const errors = []
 		page.on('pageerror', err => errors.push(err.message))
 
@@ -37,7 +37,7 @@ test.describe('Behaviour parity – candidate interactions', () => {
 		expect(errors).toEqual([])
 	})
 
-	test('wheel scrolling moves the timeline', async ({page}) => {
+	test('wheel scrolling moves the timeline', async ({page, isMobile}) => {
 		await installHostMock(page, {appState: defaultAppState, text: manyEvents.text})
 		await page.goto(`/?now=${REFERENCE_DATE}`)
 		await waitForCanvasReady(page)
@@ -50,8 +50,8 @@ test.describe('Behaviour parity – candidate interactions', () => {
 		expect(Buffer.compare(before, after)).not.toBe(0)
 	})
 
-	test('touch dragging moves the timeline vertically', async ({page}) => {
-		test.skip(!page.context()._options?.hasTouch, 'Touch not available on this project')
+	test('touch dragging moves the timeline vertically', async ({page, isMobile}) => {
+		test.skip(!isMobile, 'Touch not available on this project')
 
 		await installHostMock(page, {appState: defaultAppState, text: manyEvents.text})
 		await page.goto(`/?now=${REFERENCE_DATE}`)
@@ -113,7 +113,7 @@ test.describe('Behaviour parity – candidate interactions', () => {
 		expect(clicked).toBe(true)
 	})
 
-	test('dark mode update changes the canvas background', async ({page}) => {
+	test('dark mode update changes the canvas background', async ({page, isMobile}) => {
 		await installHostMock(page, {appState: darkModeAppState, text: singleEvent.text})
 		await page.goto(`/?now=${REFERENCE_DATE}`)
 		await waitForCanvasReady(page)
@@ -169,7 +169,7 @@ test.describe('Behaviour parity – candidate interactions', () => {
 		expect(after.length).toBeGreaterThan(1000)
 	})
 
-	test('empty event set renders without crash', async ({page}) => {
+	test('empty event set renders without crash', async ({page, isMobile}) => {
 		const errors = []
 		page.on('pageerror', err => errors.push(err.message))
 

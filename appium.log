@@ -1,0 +1,307 @@
+2026-06-05 23:45:09:162 [Appium] Welcome to Appium v3.5.0 (REV 5ff2b195dec8bf90c68aa29fb0c0a2b7991ee08f)
+2026-06-05 23:45:09:165 [Appium] Non-default server args:
+2026-06-05 23:45:09:165 [Appium] { basePath: '/' }
+2026-06-05 23:45:09:165 [Appium] The autodetected Appium home path: /tmp/workspace/SuperPauly/c2
+2026-06-05 23:45:09:166 [Appium] Attempting to load driver uiautomator2...
+2026-06-05 23:45:09:169 [Appium] Requiring driver at /tmp/workspace/SuperPauly/c2/node_modules/appium-uiautomator2-driver/build/lib/index.js
+2026-06-05 23:45:09:530 [Appium] AndroidUiautomator2Driver has been successfully loaded in 0.363s
+2026-06-05 23:45:09:546 [Appium] Appium REST http interface listener started on http://0.0.0.0:4723
+2026-06-05 23:45:09:547 [Appium] You can provide the following URLs in your client code to connect to this server:
+	http://127.0.0.1:4723/ (only accessible from the same host)
+	http://10.1.0.251:4723/
+2026-06-05 23:45:09:547 [Appium] Available drivers:
+2026-06-05 23:45:09:548 [Appium]   - uiautomator2@7.6.0 (automationName 'UiAutomator2')
+2026-06-05 23:45:09:548 [Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
+2026-06-05 23:45:10:482 [HTTP] --> POST /session {"capabilities":{"alwaysMatch":{"platformName":"Android","appium:automationName":"UiAutomator2","appium:deviceName":"emulator-5554","appium:browserName":"Chrome","appium:chromedriverAutodownload":true,"appium:newCommandTimeout":120,"appium:nativeWebScreenshot":true},"firstMatch":[{}]}}
+2026-06-05 23:45:10:483 [AppiumDriver@9275] Calling AppiumDriver.createSession() with args: [{"alwaysMatch":{"platformName":"Android","appium:automationName":"UiAutomator2","appium:deviceName":"emulator-5554","appium:browserName":"Chrome","appium:chromedriverAutodownload":true,"appium:newCommandTimeout":120,"appium:nativeWebScreenshot":true},"firstMatch":[{}]},{"alwaysMatch":{"platformName":"Android","appium:automationName":"UiAutomator2","appium:deviceName":"emulator-5554","appium:browserName":"Chrome","appium:chromedriverAutodownload":true,"appium:newCommandTimeout":120,"appium:nativeWebScreenshot":true},"firstMatch":[{}]},{"alwaysMatch":{"platformName":"Android","appium:automationName":"UiAutomator2","appium:deviceName":"emulator-5554","appium:browserName":"Chrome","appium:chromedriverAutodownload":true,"appium:newCommandTimeout":120,"appium:nativeWebScreenshot":true},"firstMatch":[{}]}]
+2026-06-05 23:45:10:484 [AppiumDriver@9275] Event 'newSessionRequested' logged at 1780703110484 (23:45:10 GMT+0000 (Coordinated Universal Time))
+2026-06-05 23:45:10:485 [BaseDriver] The capabilities ["browserName"] are standard capabilities and do not require "appium:" prefix
+2026-06-05 23:45:10:486 [Appium] Attempting to find matching driver for automationName 'UiAutomator2' and platformName 'Android'
+2026-06-05 23:45:10:487 [Appium] The 'uiautomator2' driver was installed and matched caps.
+2026-06-05 23:45:10:487 [Appium] Will require it at /tmp/workspace/SuperPauly/c2/node_modules/appium-uiautomator2-driver
+2026-06-05 23:45:10:487 [Appium] Requiring driver at /tmp/workspace/SuperPauly/c2/node_modules/appium-uiautomator2-driver/build/lib/index.js
+2026-06-05 23:45:10:488 [AppiumDriver@9275] Appium v3.5.0 creating new AndroidUiautomator2Driver (v7.6.0) session
+2026-06-05 23:45:10:488 [AppiumDriver@9275] Checking BaseDriver versions for Appium and AndroidUiautomator2Driver
+2026-06-05 23:45:10:488 [AppiumDriver@9275] Appium's BaseDriver version is 10.6.0
+2026-06-05 23:45:10:488 [AppiumDriver@9275] AndroidUiautomator2Driver's BaseDriver version is 10.6.0
+2026-06-05 23:45:10:491 [AndroidUiautomator2Driver@a025] 
+2026-06-05 23:45:10:491 [AndroidUiautomator2Driver@a025] Creating session with W3C capabilities: {
+  "alwaysMatch": {
+    "platformName": "Android",
+    "appium:automationName": "UiAutomator2",
+    "appium:deviceName": "emulator-5554",
+    "browserName": "Chrome",
+    "appium:chromedriverAutodownload": true,
+    "appium:newCommandTimeout": 120,
+    "appium:nativeWebScreenshot": true
+  },
+  "firstMatch": [
+    {}
+  ]
+}
+2026-06-05 23:45:10:493 [AndroidUiautomator2Driver@a025] The following provided capabilities were not recognized by this driver:
+2026-06-05 23:45:10:494 [AndroidUiautomator2Driver@a025]   chromedriverAutodownload
+2026-06-05 23:45:10:495 [2fb24380][AndroidUiautomator2Driver@a025] Session created with session id: 2fb24380-3f7e-40c4-9115-e4b8a62664d0
+2026-06-05 23:45:10:502 [2fb24380][ADB] Found 6 'build-tools' folders under '/usr/local/lib/android/sdk' (newest first):
+2026-06-05 23:45:10:502 [2fb24380][ADB]     /usr/local/lib/android/sdk/build-tools/37.0.0
+2026-06-05 23:45:10:502 [2fb24380][ADB]     /usr/local/lib/android/sdk/build-tools/36.1.0
+2026-06-05 23:45:10:502 [2fb24380][ADB]     /usr/local/lib/android/sdk/build-tools/36.0.0
+2026-06-05 23:45:10:502 [2fb24380][ADB]     /usr/local/lib/android/sdk/build-tools/35.0.1
+2026-06-05 23:45:10:502 [2fb24380][ADB]     /usr/local/lib/android/sdk/build-tools/35.0.0
+2026-06-05 23:45:10:503 [2fb24380][ADB]     /usr/local/lib/android/sdk/build-tools/34.0.0
+2026-06-05 23:45:10:503 [2fb24380][ADB] Using 'adb' from '/usr/local/lib/android/sdk/platform-tools/adb'
+2026-06-05 23:45:10:503 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 start-server'
+2026-06-05 23:45:10:509 [2fb24380][AndroidUiautomator2Driver@a025] Retrieving device list
+2026-06-05 23:45:10:509 [2fb24380][ADB] Trying to find connected Android devices
+2026-06-05 23:45:10:510 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:10:514 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:10:514 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:10:514 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:10:515 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:10:719 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:10:723 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:10:724 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:10:724 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:10:724 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:10:929 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:10:933 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:10:934 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:10:934 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:10:934 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:11:139 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:11:143 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:11:144 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:11:144 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:11:144 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:11:348 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:11:353 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:11:353 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:11:354 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:11:354 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:11:558 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:11:563 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:11:563 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:11:563 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:11:563 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:11:768 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:11:772 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:11:773 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:11:773 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:11:773 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:11:977 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:11:982 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:11:982 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:11:982 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:11:982 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:12:187 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:12:192 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:12:192 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:12:192 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:12:192 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:12:397 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:12:402 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:12:402 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:12:402 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:12:402 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:12:606 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:12:611 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:12:611 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:12:611 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:12:611 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:12:815 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:12:820 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:12:820 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:12:820 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:12:820 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:13:024 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:13:029 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:13:029 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:13:029 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:13:029 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:13:234 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:13:238 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:13:239 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:13:239 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:13:239 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:13:443 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:13:448 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:13:448 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:13:448 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:13:448 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:13:653 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:13:657 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:13:657 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:13:657 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:13:657 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:13:862 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:13:866 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:13:866 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:13:866 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:13:866 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:14:071 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:14:075 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:14:075 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:14:075 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:14:076 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:14:280 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:14:284 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:14:285 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:14:285 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:14:285 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:14:489 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:14:494 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:14:494 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:14:494 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:14:494 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:14:698 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:14:703 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:14:703 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:14:703 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:14:703 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:14:908 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:14:912 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:14:912 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:14:912 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:14:912 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:15:117 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:15:121 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:15:121 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:15:121 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:15:121 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:15:326 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:15:330 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:15:330 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:15:330 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:15:330 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:15:535 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:15:539 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:15:539 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:15:540 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:15:540 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:15:744 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:15:748 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:15:749 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:15:749 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:15:749 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:15:953 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:15:958 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:15:958 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:15:958 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:15:958 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:16:163 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:16:167 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:16:167 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:16:167 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:16:167 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:16:372 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:16:376 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:16:377 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:16:377 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:16:377 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:16:581 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:16:590 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:16:591 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:16:591 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:16:591 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:16:800 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:16:805 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:16:805 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:16:805 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:16:805 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:17:010 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:17:014 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:17:014 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:17:014 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:17:014 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:17:219 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:17:228 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:17:228 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:17:228 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:17:228 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:17:433 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:17:438 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:17:438 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:17:438 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:17:438 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:17:643 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:17:647 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:17:647 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:17:647 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:17:647 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:17:852 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:17:856 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:17:856 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:17:856 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:17:857 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:18:061 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:18:066 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:18:066 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:18:066 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:18:066 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:18:270 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:18:275 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:18:275 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:18:275 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:18:276 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:18:480 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:18:484 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:18:485 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:18:485 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:18:485 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:18:689 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:18:694 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:18:694 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:18:694 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:18:694 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:18:899 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:18:903 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:18:903 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:18:903 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:18:903 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:19:108 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:19:112 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:19:112 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:19:112 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:19:113 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:19:324 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:19:329 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:19:329 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:19:329 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:19:330 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:19:535 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:19:540 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:19:541 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:19:541 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:19:541 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:19:746 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:19:751 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:19:751 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:19:751 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:19:751 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:19:956 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:19:960 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:19:960 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:19:961 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:19:961 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:20:165 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:20:170 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:20:170 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:20:170 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:20:170 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:20:375 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:20:380 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:20:380 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:20:380 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:20:380 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:20:451 [HTTP] <-- POST /session - - ms - -
+2026-06-05 23:45:20:585 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:20:591 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:20:592 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:20:592 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:20:592 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:20:797 [2fb24380][ADB] Getting connected devices
+2026-06-05 23:45:20:802 [2fb24380][ADB] No connected devices have been detected
+2026-06-05 23:45:20:802 [2fb24380][ADB] Could not find online devices
+2026-06-05 23:45:20:802 [2fb24380][ADB] Reconnecting adb (target offline)
+2026-06-05 23:45:20:802 [2fb24380][ADB] Running '/usr/local/lib/android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2026-06-05 23:45:20:869 [Appium] Received SIGTERM - shutting down
